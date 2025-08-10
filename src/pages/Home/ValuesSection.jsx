@@ -50,10 +50,10 @@ export default function ValuesSection() {
   ];
 
   return (
-    <div className="self-stretch mb-[3px] bg-white">
-      <div className="grid grid-cols-3">
+    <div className="w-full bg-white">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
         {gridItems.map((item, index) => (
-          <div key={index} className="w-full h-[630px]">
+          <div key={index} className="w-full aspect-square sm:aspect-auto sm:h-[50vw] lg:h-[40vw] xl:h-[35vw] 2xl:h-[630px]">
             {item.type === "image" ? (
               <img
                 src={item.src}
@@ -62,10 +62,10 @@ export default function ValuesSection() {
               />
             ) : (
               <div
-                className="w-full h-full flex items-center justify-center px-8"
+                className="w-full h-full flex items-center justify-center p-[5vw] sm:p-[3vw] lg:p-[2vw]"
                 style={{ backgroundColor: item.bg }}
               >
-                <span className="text-white text-[56px] font-normal text-left leading-snug p-4">
+                <span className="text-white text-[5vw] sm:text-[3.5vw] md:text-[3vw] lg:text-[2.5vw] xl:text-[2vw] 2xl:text-[56px] font-normal text-left leading-tight sm:leading-snug p-[2vw] sm:p-4">
                   {item.text}
                 </span>
               </div>

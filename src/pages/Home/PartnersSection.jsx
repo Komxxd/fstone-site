@@ -6,39 +6,43 @@ import infosyslogo from "../../assets/infosyslogo.png";
 const partners = [
   {
     img: dtcclogo,
-    imgClass: "w-[181px] h-[47px] mb-[47px] object-fill",
+    imgClass:
+      "w-[clamp(90px,12vw,181px)] h-[clamp(25px,3vw,47px)] mb-[clamp(20px,3vw,47px)] object-fill",
     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.",
-    descClass: "mb-[46px]",
+    descClass: "mb-[clamp(20px,3vw,46px)]",
   },
   {
-    img: tatalogo,
-    imgClass: "flex items-center mb-9",
+    img: [tatalogo], 
+    imgClass: "flex items-center mb-[clamp(15px,2vw,36px)]",
     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.",
-    descClass: "mb-[46px]",
+    descClass: "mb-[clamp(20px,3vw,46px)]",
   },
   {
     img: infosyslogo,
-    imgClass: "w-[188px] h-[72px] object-fill mb-[22px]",
+    imgClass:
+      "w-[clamp(90px,12vw,188px)] h-[clamp(35px,4vw,72px)] object-fill mb-[clamp(15px,2vw,22px)]",
     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.",
-    descClass: "mb-[46px]",
+    descClass: "mb-[clamp(20px,3vw,46px)]",
   },
   {
     img: dtcclogo,
-    imgClass: "w-[181px] h-[47px] mb-[47px] object-fill",
+    imgClass:
+      "w-[clamp(90px,12vw,181px)] h-[clamp(25px,3vw,47px)] mb-[clamp(20px,3vw,47px)] object-fill",
     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.",
-    descClass: "mb-[46px]",
+    descClass: "mb-[clamp(20px,3vw,46px)]",
   },
   {
-    img: tatalogo,
-    imgClass: "flex items-center mb-9",
+    img: [tatalogo], 
+    imgClass: "flex items-center mb-[clamp(15px,2vw,36px)]",
     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.",
-    descClass: "mb-[46px]",
+    descClass: "mb-[clamp(20px,3vw,46px)]",
   },
   {
     img: infosyslogo,
-    imgClass: "w-[188px] h-[72px] object-fill mb-[22px]",
+    imgClass:
+      "w-[clamp(90px,12vw,188px)] h-[clamp(35px,4vw,72px)] object-fill mb-[clamp(15px,2vw,22px)]",
     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.",
-    descClass: "mb-[46px]",
+    descClass: "mb-[clamp(20px,3vw,46px)]",
   },
 ];
 
@@ -50,28 +54,23 @@ export default function PartnersSection() {
   const visiblePartners = partners.slice(currentIndex, currentIndex + 3);
 
   return (
-    <div className="flex flex-col items-start self-stretch bg-white pt-[108px] pb-[95px]">
-      {/* Title */}
-      <div className="w-full px-[318px] mb-[119px]">
-        <span className="text-[#535353] text-5xl font-bold">
+    <div className="flex flex-col items-start self-stretch bg-white pt-[clamp(50px,8vw,108px)] pb-[clamp(40px,8vw,95px)]">
+      
+      <div className="w-full px-6 sm:px-12 lg:px-24 mb-10 sm:mb-16 lg:mb-20">
+        <span className="text-[#535353] text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
           Partners we are with
         </span>
       </div>
 
-      {/* Cards */}
-      <div className="flex flex-row w-full px-[318px] gap-8">
+     
+      <div className="flex flex-col md:flex-row w-full px-[clamp(20px,10vw,318px)] gap-[clamp(16px,3vw,32px)]">
         {visiblePartners.map((partner, idx) => (
           <div className="flex flex-col flex-1 items-start" key={idx}>
             {Array.isArray(partner.img) ? (
-              <div className={partner.imgClass}>
+              <div className={`${partner.imgClass} gap-[clamp(8px,1vw,16px)]`}>
                 <img
                   src={partner.img[0]}
-                  className="w-[84px] h-[60px] object-fill"
-                  alt=""
-                />
-                <img
-                  src={partner.img[1]}
-                  className="w-40 h-[55px] object-fill"
+                  className="w-[clamp(60px,10vw,140px)] h-[clamp(20px,4vw,50px)] object-fill"
                   alt=""
                 />
               </div>
@@ -79,19 +78,19 @@ export default function PartnersSection() {
               <img src={partner.img} className={partner.imgClass} alt="" />
             )}
             <span
-              className={`text-[#535353] text-[28px] font-bold ${partner.descClass}`}
+              className={`text-[#535353] text-[clamp(16px,2.5vw,28px)] font-bold ${partner.descClass}`}
             >
               {partner.desc}
             </span>
-            <div className="flex items-center gap-3">
-              <span className="text-[#009ADE] text-[28px] font-bold">
+            <div className="flex items-center gap-[clamp(8px,1vw,12px)]">
+              <span className="text-[#009ADE] text-[clamp(16px,2.5vw,28px)] font-bold">
                 Learn more
               </span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="#009ADE"
                 viewBox="0 0 24 24"
-                className="w-[26px] h-[26px]"
+                className="w-[clamp(16px,2vw,26px)] h-[clamp(16px,2vw,26px)]"
               >
                 <path
                   fillRule="evenodd"
@@ -104,16 +103,16 @@ export default function PartnersSection() {
         ))}
       </div>
 
-      {/* Navigation */}
-      <div className="flex w-full px-[318px] mt-12 justify-end">
-        <div className="flex items-center gap-4">
+      
+      <div className="flex w-full px-[clamp(20px,10vw,318px)] mt-[clamp(20px,3vw,48px)] justify-end">
+        <div className="flex items-center gap-[clamp(8px,1.5vw,16px)]">
           <button
-            className="w-[54px] h-[54px] rounded-full border border-[#81CDED] flex items-center justify-center group disabled:opacity-40"
+            className="w-[clamp(36px,5vw,54px)] h-[clamp(36px,5vw,54px)] rounded-full border border-[#81CDED] flex items-center justify-center group disabled:opacity-40"
             onClick={() => canGoLeft && setCurrentIndex(currentIndex - 3)}
             disabled={!canGoLeft}
           >
             <svg
-              className="w-4 h-4 text-[#81CDED] group-hover:text-[#009ADE] transition"
+              className="w-[clamp(12px,1.5vw,16px)] h-[clamp(12px,1.5vw,16px)] text-[#81CDED] group-hover:text-[#009ADE] transition"
               fill="none"
               stroke="currentColor"
               strokeWidth="2.5"
@@ -127,12 +126,12 @@ export default function PartnersSection() {
             </svg>
           </button>
           <button
-            className="w-[54px] h-[54px] rounded-full border-2 border-[#009ADE] flex items-center justify-center group disabled:opacity-40"
+            className="w-[clamp(36px,5vw,54px)] h-[clamp(36px,5vw,54px)] rounded-full border-2 border-[#009ADE] flex items-center justify-center group disabled:opacity-40"
             onClick={() => canGoRight && setCurrentIndex(currentIndex + 3)}
             disabled={!canGoRight}
           >
             <svg
-              className="w-4 h-4 text-[#009ADE] group-hover:text-[#005F99] transition"
+              className="w-[clamp(12px,1.5vw,16px)] h-[clamp(12px,1.5vw,16px)] text-[#009ADE] group-hover:text-[#005F99] transition"
               fill="none"
               stroke="currentColor"
               strokeWidth="2.5"

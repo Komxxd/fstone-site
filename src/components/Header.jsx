@@ -1,9 +1,25 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import fstoneLogo from "../assets/fstoneLogo.png";
 
 export default function Header() {
   const location = useLocation();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  
+  useEffect(() => {
+    setIsMenuOpen(false);
+  }, [location.pathname]);
+
+  
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const isActive = (path) => {
     if (path === "/" && location.pathname === "/") return true;
@@ -11,84 +27,113 @@ export default function Header() {
     return false;
   };
 
-  return (
-    <div className="flex justify-between items-center self-stretch bg-white py-[26px] pl-[77px] pr-[392px]">
-      <Link to="/">
-        <img
-          src={fstoneLogo}
-          className="w-[193px] h-[49px] object-fill"
-          alt="Fstone Logo"
-        />
+  const navItems = [
+    { path: "/", label: "Home" },
+    { path: "/about", label: "About us" },
+    { path: "/news", label: "News & Views" },
+    { path: "#", label: "Services", hasDropdown: true },
+    { path: "#", label: "Careers", hasDropdown: true },
+    { path: "/contact", label: "Contact" },
+  ];
+
+  
+  const renderNavItem = (item, isMobile = false) => (
+    <div key={item.label} className={`relative group ${isMobile ? "w-full" : ""}`}>
+      <Link
+        to={item.path}
+        className={`block ${isMobile ? "py-3 px-4" : "px-3 py-6"}`}
+      >
+        <div className="flex items-center">
+          <span
+            className={`font-medium text-gray-800 hover:text-[#009ADE] transition-colors duration-200 ${
+              isMobile ? "text-lg" : "text-lg xl:text-[20px] font-semibold"
+            }`}
+          >
+            {item.label}
+          </span>
+          {item.hasDropdown && (
+            <svg
+              className="w-3 h-3 ml-1 fill-current text-gray-600 group-hover:text-[#009ADE] transition-colors duration-200"
+              viewBox="0 0 8 6"
+            >
+              <path d="M4 6L0 0h8L4 6z" />
+            </svg>
+          )}
+        </div>
+        {!isMobile && isActive(item.path) && (
+          <div className="absolute bottom-0 left-0 right-0 h-[4px] bg-[#009ADE]" />
+        )}
       </Link>
-      <div className="flex shrink-0 items-center pr-[3px]">
-        <div className="relative mr-16">
-          <Link to="/">
-            <span className="text-[#1E1E1E] text-[24px] font-[550] font-urbanist">
-              Home
-            </span>
-          </Link>
-          {isActive("/") && (
-            <div className="absolute bottom-[-31px] left-1/2 transform -translate-x-1/2 bg-[#009ADE] w-[130px] h-[5px]" />
-          )}
-        </div>
+    </div>
+  );
 
-        <div className="relative mr-[63px]">
-          <Link to="/about">
-            <span className="text-[#1E1E1E] text-[24px] font-[550] font-urbanist">
-              About us
-            </span>
+  return (
+    <header
+      className={`fixed top-0 left-0 w-full z-50 bg-white ${
+        isScrolled ? "shadow-md" : ""
+      }`}
+    >
+      <div className="container mx-auto px-4">
+        <div className="flex items-center justify-between h-20">
+          
+          <Link to="/" className="flex-shrink-0">
+            <img src={fstoneLogo} className="h-10 w-auto" alt="Fstone Logo" />
           </Link>
-          {isActive("/about") && (
-            <div className="absolute bottom-[-31px] left-1/2 transform -translate-x-1/2 bg-[#009ADE] w-[130px] h-[5px]" />
-          )}
-        </div>
 
-        <div className="relative mr-[63px]">
-          <Link to="/news">
-            <span className="text-[#1E1E1E] text-[24px] font-[550] font-urbanist">
-              News & Views
-            </span>
-          </Link>
-          {isActive("/news") && (
-            <div className="absolute bottom-[-31px] left-1/2 transform -translate-x-1/2 bg-[#009ADE] w-[130px] h-[5px]" />
-          )}
-        </div>
+          
+          <nav className="hidden lg:flex items-center absolute left-1/2 transform -translate-x-1/2">
+            <div className="flex space-x-10">
+              {navItems.map((item) => renderNavItem(item))}
+            </div>
+          </nav>
 
-        <div className="flex shrink-0 items-center mr-[60px] gap-1">
-          <span className="text-[#1E1E1E] text-[24px] font-[550] font-urbanist">
-            Services
-          </span>
-          <svg
-            className="w-5 h-5 fill-[#444]"
-            viewBox="0 0 320 512"
+          
+          <button
+            className="lg:hidden p-2 text-gray-700 hover:text-[#009ADE] focus:outline-none"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label="Toggle menu"
           >
-            <path d="M31.3 192h257.4c28.4 0 42.8 34.5 22.6 54.6l-128.7 128c-12.5 12.5-32.8 12.5-45.3 0l-128.7-128c-20.2-20.1-5.8-54.6 22.7-54.6z"/>
-          </svg>
-        </div>
-
-        <div className="flex shrink-0 items-center px-[3px] mr-[60px] gap-1">
-          <span className="text-[#1E1E1E] text-[24px] font-[550] font-urbanist">
-            Careers
-          </span>
-          <svg
-            className="w-5 h-5 fill-[#444]"
-            viewBox="0 0 320 512"
-          >
-            <path d="M31.3 192h257.4c28.4 0 42.8 34.5 22.6 54.6l-128.7 128c-12.5 12.5-32.8 12.5-45.3 0l-128.7-128c-20.2-20.1-5.8-54.6 22.7-54.6z"/>
-          </svg>
-        </div>
-
-        <div className="relative">
-          <Link to="/contact">
-            <span className="text-[#1E1E1E] text-[24px] font-[600] font-urbanist">
-              Contact
-            </span>
-          </Link>
-          {isActive("/contact") && (
-            <div className="absolute bottom-[-31px] left-1/2 transform -translate-x-1/2 bg-[#009ADE] w-[130px] h-[5px]" />
-          )}
+            {isMenuOpen ? (
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            ) : (
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6h16M4 12h16m-7 6h7"
+                />
+              </svg>
+            )}
+          </button>
         </div>
       </div>
-    </div>
+
+    
+      {isMenuOpen && (
+        <div className="lg:hidden bg-white border-t border-gray-200">
+          <div className="px-2 pt-2 pb-3 space-y-1">
+            {navItems.map((item) => renderNavItem(item, true))}
+          </div>
+        </div>
+      )}
+    </header>
   );
 }
