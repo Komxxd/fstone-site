@@ -31,8 +31,8 @@ export default function Header() {
     { path: "/", label: "Home" },
     { path: "/about", label: "About us" },
     { path: "/news", label: "News & Views" },
-    { path: "#", label: "Services", hasDropdown: true },
-    { path: "#", label: "Careers", hasDropdown: true },
+    { path: "/services", label: "Services", hasDropdown: true },
+    { path: "/careers", label: "Careers", hasDropdown: true },
     { path: "/contact", label: "Contact" },
   ];
 
