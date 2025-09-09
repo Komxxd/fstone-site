@@ -1,5 +1,5 @@
 import React from "react";
-import whychooseusimage from "../../assets/whychooseimage.png"
+import whychooseusimage from "../../assets/Home/whychooseimage.png"
 
 export default function WhyChooseSection() {
   return (

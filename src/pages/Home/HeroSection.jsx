@@ -1,6 +1,6 @@
 import React from "react";
-import HeroImage from "../../assets/HeroImage.png";
-import BlueArrow from "../../assets/BlueArrow.png";
+import HeroImage from "../../assets/Home/HeroImage.png"
+import BlueArrow from "../../assets/Home/BlueArrow.png";
 
 export default function HeroSection() {
   const [currentSlide, setCurrentSlide] = React.useState(1);

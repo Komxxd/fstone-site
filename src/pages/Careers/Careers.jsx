@@ -2,10 +2,12 @@ import React from "react";
 import { Outlet, useLocation, useParams, Routes, Route } from "react-router-dom";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
-import ContactBanner from "./ContactBanner";
-import OurLocations from "./OurLocations";
+import CareersBanner from "./CareersBanner";
+import WhyCareerInRecruitment from "./WhyCareerInRecruitment";
+import CareerWithUs from "./CareerWithUs";
+import CurrentOpenings from "./CurrentOpenings";
 
-export default function Services() {
+export default function Careers() {
   const location = useLocation();
   const params = useParams();
   
@@ -15,12 +17,14 @@ export default function Services() {
   return (
     <div className="flex flex-col min-h-screen bg-white">
       <Header />
-      <ContactBanner />
+      <CareersBanner />
       
       <main className="flex-1">
         <Routes>
-          <Route index element={<OurLocations />} />
-          <Route path="ClientServices" element={<OurLocations />} />
+          <Route index element={<WhyCareerInRecruitment />} />
+          <Route path="WhyCareerInRecruitment" element={<WhyCareerInRecruitment />} />
+          <Route path="CareerWithUs" element={<CareerWithUs />} />
+          <Route path="CurrentOpenings" element={<CurrentOpenings />} />
         </Routes>
       </main>
       

@@ -1,7 +1,7 @@
 import React from "react";
-import javaimage from "../../assets/javaimage.png";
-import microsoftimage from "../../assets/microsoftimage.png";
-import erpimage from "../../assets/erpimage.png";
+import javaimage from "../../assets/Home/javaimage.png";
+import microsoftimage from "../../assets/Home/microsoftimage.png";
+import erpimage from "../../assets/Home/erpimage.png";
 
 export default function TechnologiesSection() {
   return (

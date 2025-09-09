@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import testimonial1 from "../../assets/testimonial1.png";
-import testimonial2 from "../../assets/testimonial2.png";
+import testimonial1 from "../../assets/Home/testimonial1.png";
+import testimonial2 from "../../assets/Home/testimonial2.png";
 
 const testimonials = [
   {

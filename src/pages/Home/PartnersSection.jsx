@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import dtcclogo from "../../assets/dtcclogo.png";
-import tatalogo from "../../assets/tatalogo.png";
-import infosyslogo from "../../assets/infosyslogo.png";
+import dtcclogo from "../../assets/Home/dtcclogo.png";
+import tatalogo from "../../assets/Home/tatalogo.png";
+import infosyslogo from "../../assets/Home/infosyslogo.png";
 
 const partners = [
   {

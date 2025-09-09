@@ -1,23 +1,19 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 
-export default function ServicesBanner() {
+export default function CareersBanner() {
   const navigate = useNavigate();
   const location = useLocation();
 
   const submenus = [
-    { name: "Client Services", path: "ClientServices" },
-    { name: "IT Staff", path: "ITStaff" },
-    { name: "Technology Consulting", path: "TechnologyConsulting" },
-    { name: "Business Consulting", path: "BusinessConsulting" },
-    { name: "Workforce Solutions", path: "WorkforceSolutions" },
-    { name: "Outsourcing Services", path: "OutsourcingServices" },
+    { name: "Why a Career in Recruitment", path: "WhyCareerInRecruitment" },
+    { name: "Career with Us", path: "CareerWithUs" },
+    { name: "Current Openings", path: "CurrentOpenings" },
   ];
 
-  const [active, setActive] = useState("Client Services");
+  const [active, setActive] = useState("Why a Career in Recruitment");
   const [isOpen, setIsOpen] = useState(false);
 
-  
   useEffect(() => {
     const current = submenus.find((item) =>
       location.pathname.includes(item.path)
@@ -25,28 +21,30 @@ export default function ServicesBanner() {
     if (current) {
       setActive(current.name);
     } else {
-      setActive("Client Services"); 
+      setActive("Why a Career in Recruitment");
     }
   }, [location.pathname]);
 
   const handleClick = (item) => {
     setActive(item.name);
-    navigate(`/services/${item.path}`);
+    navigate(`/careers/${item.path}`);
     setIsOpen(false); 
   };
 
   return (
     <div className="bg-[#009ADE] w-full mt-20">
       <div className="max-w-[1200px] mx-auto flex justify-between items-center h-[clamp(40px,8vw,70px)] px-4">
+        
         <div className="flex items-center">
           <span
             className="text-white font-medium"
             style={{ fontSize: "clamp(14px, 2vw, 15px)" }}
           >
-            Services
+            Careers
           </span>
         </div>
 
+        
         <div className="hidden sm:flex h-full">
           {submenus.map((item) => (
             <div
@@ -58,7 +56,9 @@ export default function ServicesBanner() {
             >
               <span
                 className="font-medium text-white"
-                style={{ fontSize: "clamp(14px, 2vw, 15px)" }}
+                style={{
+                  fontSize: "clamp(14px, 2vw, 15px)",
+                }}
               >
                 {item.name}
               </span>
@@ -66,6 +66,7 @@ export default function ServicesBanner() {
           ))}
         </div>
 
+      
         <div className="sm:hidden">
           <button
             className="p-2 text-white focus:outline-none"
@@ -87,6 +88,7 @@ export default function ServicesBanner() {
                 />
               </svg>
             ) : (
+            
               <svg
                 className="w-6 h-6"
                 fill="none"
@@ -105,6 +107,7 @@ export default function ServicesBanner() {
         </div>
       </div>
 
+      
       {isOpen && (
         <div className="sm:hidden bg-[#009ADE] border-t border-blue-300">
           {submenus.map((item) => (

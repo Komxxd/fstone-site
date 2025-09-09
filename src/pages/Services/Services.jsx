@@ -8,6 +8,7 @@ import ITStaff from "./ITStaff";
 import TechnologyConsulting from "./TechnologyConsulting";
 import BusinessConsulting from "./BusinessConsulting";
 import WorkforceSolutions from "./WorkforceSolutions";
+import OutSourcingServices from "./OutSourcingServices";
 
 export default function Services() {
   const location = useLocation();
@@ -29,6 +30,7 @@ export default function Services() {
           <Route path="TechnologyConsulting" element={<TechnologyConsulting />} />
           <Route path="BusinessConsulting" element={<BusinessConsulting />} />
           <Route path="WorkforceSolutions" element={<WorkforceSolutions />} />
+          <Route path="OutSourcingServices" element={<OutSourcingServices />} />
         </Routes>
       </main>
       

@@ -1,15 +1,13 @@
 import React from "react";
-import clientservices1 from "../../assets/clientservices1.png";
-import clientservices2 from "../../assets/clientservices2.png";
+import clientservices1 from "../../assets/Services/clientservices1.png";
+import clientservices2 from "../../assets/Services/clientservices2.png";
 
 export default function ClientServices() {
   return (
     <div className="flex flex-col bg-white">
       <div className="flex flex-col items-center w-full bg-white">
-        {/* Top Section */}
         <div className="w-full max-w-[1920px] px-[clamp(16px,5vw,80px)] mt-[clamp(50px,8vw,100px)] mb-[clamp(40px,6vw,73px)]">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-x-[clamp(20px,4vw,80px)]">
-            {/* Column 1 */}
             <div className="relative pb-12 lg:pb-0">
               <h1 className="text-[#535353] text-[clamp(36px,5vw,68px)] font-bold leading-tight mb-[clamp(16px,2vw,22px)]">
                 Client Services
@@ -27,11 +25,9 @@ export default function ClientServices() {
                   advice to help you attract and retain a high-performing workforce.
                 </p>
               </div>
-              {/* Divider for mobile */}
               <div className="lg:hidden w-full h-px bg-[#73737394] my-8" />
             </div>
 
-            {/* Column 2 */}
             <div className="relative pb-12 lg:pb-0">
               <div className="lg:pl-[clamp(20px,4vw,40px)] lg:border-l border-[#73737394] h-full">
                 <div className="space-y-[clamp(16px,2vw,19px)] mb-[clamp(60px,10vw,141px)]">
@@ -54,11 +50,9 @@ export default function ClientServices() {
                   </p>
                 </div>
               </div>
-              {/* Divider for mobile */}
               <div className="lg:hidden w-full h-px bg-[#73737394] my-8" />
             </div>
 
-            {/* Column 3 */}
             <div className="relative">
               <div className="lg:pl-[clamp(20px,4vw,40px)] lg:border-l border-[#73737394] h-full">
                 <div className="space-y-[clamp(16px,2vw,19px)] mb-[clamp(60px,10vw,113px)]">
@@ -84,14 +78,11 @@ export default function ClientServices() {
           </div>
         </div>
 
-        {/* Black Section */}
         <div className="flex flex-col items-center self-stretch bg-black py-[clamp(80px,12vw,148px)]">
           <div className="w-full max-w-[clamp(800px,80vw,1280px)] px-[clamp(16px,2vw,0px)]">
-            {/* First Row of Cards */}
             <div className="self-stretch mb-[clamp(35px,5.5vw,70px)]">
               <div className="self-stretch mb-[clamp(35px,5.5vw,70px)]">
                 <div className="flex flex-col lg:flex-row items-start self-stretch mb-[clamp(35px,5.5vw,70px)] gap-[clamp(17px,2.7vw,34px)]">
-                  {/* Card 1 */}
                   <div className="flex flex-1 flex-col items-start bg-[#202020] py-[clamp(31px,4.8vw,62px)] gap-[clamp(18px,2.9vw,37px)]">
                     <div className="bg-[#009ADE] w-[clamp(45px,7vw,90px)] h-[clamp(1.5px,0.23vw,3px)] ml-[clamp(15px,2.4vw,31px)]" />
                     <div className="flex flex-col items-start self-stretch mx-[clamp(15px,2.4vw,31px)] gap-[clamp(25px,4vw,51px)]">
@@ -125,7 +116,6 @@ export default function ClientServices() {
                     </div>
                   </div>
 
-                  {/* Card 2 */}
                   <div className="flex flex-1 flex-col items-start bg-[#202020] py-[clamp(31px,4.8vw,62px)] gap-[clamp(18px,2.9vw,37px)]">
                     <div className="bg-[#009ADE] w-[clamp(45px,7vw,90px)] h-[clamp(1.5px,0.23vw,3px)] ml-[clamp(15px,2.4vw,31px)]" />
                     <div className="flex flex-col items-start self-stretch mx-[clamp(15px,2.4vw,31px)] gap-[clamp(25px,4vw,51px)]">
@@ -159,7 +149,6 @@ export default function ClientServices() {
                   </div>
                 </div>
 
-                {/* Background Section */}
                 <div
                   className="self-stretch bg-cover bg-center pt-[clamp(173px,27vw,347px)]"
                   style={{ backgroundImage: `url(${clientservices1})` }}
@@ -196,9 +185,7 @@ export default function ClientServices() {
                 </div>
               </div>
 
-              {/* Second Row of Cards */}
               <div className="flex flex-col lg:flex-row items-start self-stretch gap-[clamp(17px,2.7vw,34px)]">
-                {/* Card 3 */}
                 <div className="flex flex-1 flex-col items-start bg-[#202020] py-[clamp(31px,4.8vw,62px)] gap-[clamp(18px,2.9vw,37px)]">
                   <div className="bg-[#009ADE] w-[clamp(45px,7vw,90px)] h-[clamp(1.5px,0.23vw,3px)] ml-[clamp(15px,2.4vw,31px)]" />
                   <div className="flex flex-col items-start self-stretch mx-[clamp(15px,2.4vw,31px)] gap-[clamp(25px,4vw,51px)]">
@@ -231,7 +218,6 @@ export default function ClientServices() {
                   </div>
                 </div>
 
-                {/* Card 4 */}
                 <div className="flex flex-1 flex-col items-start bg-[#202020] py-[clamp(31px,4.8vw,62px)] gap-[clamp(18px,2.9vw,37px)]">
                   <div className="bg-[#009ADE] w-[clamp(45px,7vw,90px)] h-[clamp(1.5px,0.23vw,3px)] ml-[clamp(15px,2.4vw,31px)]" />
                   <div className="flex flex-col items-start self-stretch mx-[clamp(15px,2.4vw,31px)] gap-[clamp(25px,4vw,51px)]">
@@ -267,7 +253,6 @@ export default function ClientServices() {
               </div>
             </div>
 
-            {/* Final Background Section */}
             <div
               className="self-stretch bg-cover bg-center pt-[clamp(173px,27vw,347px)]"
               style={{ backgroundImage: `url(${clientservices2})` }}

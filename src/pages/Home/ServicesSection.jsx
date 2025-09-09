@@ -1,7 +1,7 @@
 import React from "react";
-import clientservices from "../../assets/clientservices.png";
-import itstaff from "../../assets/itstaff.png";
-import techconsult from "../../assets/techconsult.png";
+import clientservices from "../../assets/Home/clientservices.png";
+import itstaff from "../../assets/Home/itstaff.png";
+import techconsult from "../../assets/Home/techconsult.png";
 
 export default function ServicesSection() {
   const cards = [
@@ -58,7 +58,7 @@ export default function ServicesSection() {
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                d="M15 19l-7-7 7-7"
+                d="M15 19l-7-7 7-7"a
               />
             </svg>
           </button>

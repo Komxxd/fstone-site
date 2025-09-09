@@ -1,9 +1,9 @@
 import React from "react";
-import ourvalues1 from "../../assets/ourvalues1.png"
-import ourvalues2 from "../../assets/ourvalues2.png"
-import ourvalues3 from "../../assets/ourvalues3.png"
-import ourvalues4 from "../../assets/ourvalues4.png"
-import ourvalues5 from "../../assets/ourvalues5.png"
+import ourvalues1 from "../../assets/Home/ourvalues1.png"
+import ourvalues2 from "../../assets/Home/ourvalues2.png"
+import ourvalues3 from "../../assets/Home/ourvalues3.png"
+import ourvalues4 from "../../assets/Home/ourvalues4.png"
+import ourvalues5 from "../../assets/Home/ourvalues5.png"
 
 export default function ValuesSection() {
   const gridItems = [

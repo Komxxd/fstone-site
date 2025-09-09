@@ -1,5 +1,5 @@
 import React from "react";
-import star from "../../assets/star_shine.png"
+import star from "../../assets/AboutUs/star_shine.png"
 
 export default function AwardsSection() {
   return (

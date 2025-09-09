@@ -7,12 +7,10 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
-  
   useEffect(() => {
     setIsMenuOpen(false);
   }, [location.pathname]);
 
-  
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
@@ -36,7 +34,6 @@ export default function Header() {
     { path: "/contact", label: "Contact" },
   ];
 
-  
   const renderNavItem = (item, isMobile = false) => (
     <div key={item.label} className={`relative group ${isMobile ? "w-full" : ""}`}>
       <Link
@@ -46,7 +43,9 @@ export default function Header() {
         <div className="flex items-center">
           <span
             className={`font-medium text-gray-800 hover:text-[#009ADE] transition-colors duration-200 ${
-              isMobile ? "text-lg" : "text-lg xl:text-[20px] font-semibold"
+              isMobile
+                ? "text-lg"
+                : "text-sm lg:text-base xl:text-[15px] 2xl:text-[18px] font-semibold"
             }`}
           >
             {item.label}
@@ -81,15 +80,15 @@ export default function Header() {
           </Link>
 
           
-          <nav className="hidden lg:flex items-center absolute left-1/2 transform -translate-x-1/2">
-            <div className="flex space-x-10">
+          <nav className="hidden xl:flex items-center absolute left-1/2 transform -translate-x-1/2">
+            <div className="flex space-x-4 lg:space-x-6 xl:space-x-6 2xl:space-x-10">
               {navItems.map((item) => renderNavItem(item))}
             </div>
           </nav>
 
-          
+        
           <button
-            className="lg:hidden p-2 text-gray-700 hover:text-[#009ADE] focus:outline-none"
+            className="xl:hidden p-2 text-gray-700 hover:text-[#009ADE] focus:outline-none"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -126,9 +125,9 @@ export default function Header() {
         </div>
       </div>
 
-    
+      
       {isMenuOpen && (
-        <div className="lg:hidden bg-white border-t border-gray-200">
+        <div className="xl:hidden bg-white border-t border-gray-200">
           <div className="px-2 pt-2 pb-3 space-y-1">
             {navItems.map((item) => renderNavItem(item, true))}
           </div>

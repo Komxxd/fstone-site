@@ -1,5 +1,5 @@
 import React from "react";
-import newsimage from "../../assets/newsimage.png"
+import newsimage from "../../assets/News&Views/newsimage.png"
 
 export default function NewsAndViews() {
   return (
