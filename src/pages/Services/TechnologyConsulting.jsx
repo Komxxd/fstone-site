@@ -1,8 +1,10 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import techconsulthero from "../../assets/Services/technologyconsulthero.png";
 import techinfo from "../../assets/Services/techinfoimg.png";
 
 export default function TechnologyConsulting() {
+  const navigate = useNavigate();
   return (
     <div className="flex flex-col bg-white w-full">
       <div className="flex flex-col items-start w-full bg-white min-h-screen">
@@ -46,7 +48,7 @@ export default function TechnologyConsulting() {
                 borderWidth: "clamp(1.5px, 0.3vw, 3px)",
                 marginTop: "clamp(24px, 3vw, 40px)"
               }}
-              onClick={() => alert("Pressed!")}
+              onClick={() => navigate("/contact")}
             >
               <span className="text-white font-bold transform transition-transform duration-300 group-hover:-translate-x-2"
                     style={{ fontSize: "clamp(14px, 1.6vw, 18px)" }}>

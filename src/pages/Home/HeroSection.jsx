@@ -1,10 +1,12 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import HeroImage from "../../assets/Home/HeroImage.png"
 import BlueArrow from "../../assets/Home/BlueArrow.png";
 
 export default function HeroSection() {
   const [currentSlide, setCurrentSlide] = React.useState(1);
   const images = [HeroImage, HeroImage, HeroImage];
+  const navigate = useNavigate();
 
   return (
     <div
@@ -36,7 +38,7 @@ export default function HeroSection() {
       
         <button
           className="group flex items-center justify-center bg-transparent hover:bg-[#009ADE] text-center w-[clamp(140px,20vw,336px)] h-[clamp(44px,8vw,94px)] mb-[clamp(40px,10vw,143px)] ml-[clamp(16px,5vw,95px)] gap-[clamp(6px,1vw,11px)] rounded-md border-[clamp(1.5px,0.4vw,3px)] border-solid border-[#009ADE] relative z-10 transition-colors duration-300"
-          onClick={() => alert("Pressed!")}
+          onClick={() => navigate("/contact")}
         >
           <span className="text-white text-[clamp(14px,1.5vw,20px)] font-bold transform transition-transform duration-300 group-hover:-translate-x-2">
             Let's Connect

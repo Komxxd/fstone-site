@@ -1,7 +1,9 @@
-import React from "react";
+import React, { use } from "react";
+import { useNavigate } from "react-router-dom";
 import workforcesol from "../../assets/Services/workforcesol.png"; 
 
 export default function WorkforceSolutions() {
+  const navigate = useNavigate();
   return (
     <div className="relative w-full bg-white">
       
@@ -54,7 +56,7 @@ export default function WorkforceSolutions() {
             gap: "clamp(8px, 1vw, 11px)",
             borderWidth: "clamp(1.5px, 0.3vw, 3px)"
           }}
-          onClick={() => alert("Pressed!")}
+          onClick={() => navigate("/contact")}
         >
           <span
             className="text-white font-bold transform transition-transform duration-300 group-hover:-translate-x-2"

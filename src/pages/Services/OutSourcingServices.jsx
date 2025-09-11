@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import outsourceservices from "../../assets/Services/outsourceservices.png"; 
 import resumeIcon from "../../assets/Services/resume.png";
 import interviewIcon from "../../assets/Services/interview.png";
@@ -6,6 +7,7 @@ import offerIcon from "../../assets/Services/offer.png";
 import postInterviewIcon from "../../assets/Services/postinterview.png";
 
 export default function OutSourcingServices() {
+  const navigate = useNavigate();
   return (
     <div className="w-full bg-white">
       <div className="relative w-full">
@@ -56,7 +58,7 @@ export default function OutSourcingServices() {
               gap: "clamp(8px, 1vw, 11px)",
               borderWidth: "clamp(1.5px, 0.3vw, 3px)"
             }}
-            onClick={() => alert("Pressed!")}
+            onClick={() => navigate("/contact")}
           >
             <span
               className="text-white font-bold transform transition-transform duration-300 group-hover:-translate-x-2"

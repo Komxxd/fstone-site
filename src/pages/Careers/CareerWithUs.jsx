@@ -1,7 +1,9 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import careerwithus from "../../assets/Careers/careerwithus.png"
 
 export default function CareerWithUs() {
+  const navigate = useNavigate();
   const services = [
     "UX DESIGNER, Location- Kendell Park, New Jersey",
     "TECHNICAL ACCOUNT SPECIALIST, Location : Kendell Park, New Jersey",
@@ -35,7 +37,7 @@ export default function CareerWithUs() {
 
           <button
             className="group flex items-center justify-center lg:justify-start bg-transparent text-center lg:text-left py-[3vw] sm:py-[2.5vw] md:py-[2vw] lg:py-[1.5vw] xl:py-[1.2vw] 2xl:py-[1vw] px-[10vw] sm:px-[8vw] md:px-[6vw] lg:px-[4vw] xl:px-[3vw] 2xl:px-[2.5vw] gap-[2vw] lg:gap-[1vw] rounded-md border-[0.3vw] sm:border-[0.25vw] md:border-[0.2vw] lg:border-[0.15vw] xl:border-[0.12vw] 2xl:border-[3px] border-solid border-[#009ADE] hover:bg-[#009ADE] transition-all duration-300"
-            onClick={() => alert("Pressed!")}
+            onClick={() => navigate("/contact")}
           >
             <span className="text-[#009ADE] text-[3.5vw] sm:text-[2.5vw] md:text-[2vw] lg:text-[1.5vw] xl:text-[1.2vw] 2xl:text-[1.1vw] font-bold group-hover:text-white transition-colors duration-300">
               Let's Connect

@@ -1,8 +1,10 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import itstaff1 from "../../assets/Services/itstaff1.png";
 import itstaff2 from "../../assets/Services/itstaff2.png";
 
 export default function ITStaff() {
+	const navigate = useNavigate();
 	return (
 		<div className="flex flex-col bg-white w-full">
 			<div className="flex flex-col items-start w-full bg-white min-h-screen">
@@ -36,7 +38,7 @@ export default function ITStaff() {
 					
 					<button
 						className="group flex items-center justify-center bg-transparent hover:bg-[#009ADE] text-center w-[clamp(160px,25vw,336px)] h-[clamp(50px,8vw,94px)] gap-[clamp(6px,1vw,11px)] rounded-md border-[clamp(1.5px,0.4vw,3px)] border-solid border-[#009ADE] relative z-10 transition-all duration-300"
-						onClick={() => alert("Pressed!")}
+						onClick={() => navigate("/contact")}
 					>
 						<span className="text-white text-[clamp(14px,1.8vw,20px)] font-bold transform transition-transform duration-300 group-hover:-translate-x-2">
 							Let's Connect
